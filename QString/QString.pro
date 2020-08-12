@@ -1,20 +1,18 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2020-04-16T20:56:55
+# Project created by QtCreator 2020-05-09T11:21:11
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       -= gui
 
-TARGET = QString
+TARGET = qstring
+CONFIG   += console
+CONFIG   -= app_bundle
+
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
-
-HEADERS  += mainwindow.h
-
-FORMS    += mainwindow.ui
+SOURCES += main.cpp
