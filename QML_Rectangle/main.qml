@@ -1,43 +1,59 @@
-import QtQuick 2.12
-import QtQuick.Window 2.12
+import QtQuick 2.3
+import QtQuick.Controls 1.2
 
-Window {
-    visible: true
-    width: 500
-    height: 500
+Rectangle {
+    id: rootTangle
+    width: 360
+    height: 360
+    color: "red"
 
-    Rectangle
-    {
-        width: 50
-        height: 50
-        color: "#ff0000"
-        border.color:  "#000000"
-        border.width: 4
-
+    Rectangle {
+        id: blueRec
+        width: rootTangle.width/2
+        height: 64
+        anchors.centerIn: rootTangle
+        border.color: "#000000"
+        border.width: 7
+        radius: 20
+//        gradient: Gradient {
+//            GradientStop { position: 0.0; color: "red" }
+//            GradientStop { position: 0.33; color: "yellow" }
+//            GradientStop { position: 1.0; color: "green" }
+//        }
     }
 
-    Rectangle
-    {
-        width: 50
-        height: 50
-        x: 100
-        y: 100
-        color: "#ff0000"
-        border.color:  "#000000"
-        border.width: 4
 
-        anchors.centerIn: parent
-        Rectangle
-        {
-            width: 50
-            height: 50
+//    Text {
+//        anchors.centerIn: parent
+//        text: "Hello world"
+//        color: "white"
+//        font.pixelSize: Math.round(blueRec.height/3)
+//        width: blueRec.width
+////        wrapMode: Text.WordWrap
 
-            x: 200
-            y: 200
+//    }
 
-            color: "green"
-            border.color:  "darkgreen"
-            border.width: 4
+    MouseArea {
+        id: blueRecMouseArea
+        hoverEnabled: true
+        onEntered: {
+            blueRec.color = "brown"
+            blueRec.rotation = "45"
+            fooText.rotation = "45"
+        }
+        onExited: {
+            blueRec.color = "blue"
+            blueRec.rotation = "0"
+            fooText.rotation = "0"
+        }
+
+        Text {
+            id: fooText;
+            anchors.centerIn: blueRecMouseArea
+            text: "Hello world"
+            color: "white"
+            font.pixelSize: Math.round(blueRec.height/3)
+
 
         }
     }
