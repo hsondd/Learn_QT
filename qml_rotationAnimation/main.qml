@@ -22,11 +22,12 @@ Window {
             anchors.centerIn: body
             fillMode: Image.PreserveAspectFit
             width: 1350
+            height: 1350
 //            Rotation: 35
             RotationAnimation on rotation {
                 from: 0
                 to: 360
-                duration: 300
+                duration: 3000
                 running: root.running
                 loops: Animation.Infinite
             }
@@ -34,11 +35,11 @@ Window {
 
         Image {
             id: smile
-            source: "smile.png"
+            source: "aa.png"
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: background
-            width: 150
-            opacity: 0.5
+            width: 300
+            opacity: 0.9
         }
 
         MouseArea {

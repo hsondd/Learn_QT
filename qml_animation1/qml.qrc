@@ -1,10 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>box.png</file>
         <file>background.jpg</file>
-        <file>smile.jpg</file>
-        <file>smile.png</file>
-        <file>son.png</file>
-        <file>aa.png</file>
     </qresource>
 </RCC>
