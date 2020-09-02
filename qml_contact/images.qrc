@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/imag">
+        <file>images/ContactList_images_star.svg</file>
+        <file>images/ContactList_images_night.svg</file>
+    </qresource>
+</RCC>

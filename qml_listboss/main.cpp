@@ -1,15 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QQmlEngine>
 #include <QQmlContext>
+#include <QQuickView>
 
+#include "member.h"
+#include "listboss.h"
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
-
-    QScopedPointer<MouseMemory> mouse(new MouseMemory);
+    ListBoss bossData;
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -18,6 +19,10 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+    QQuickView *view = new QQuickView();
+    view->rootContext()->setContextProperty("bossBoss", &bossData);
+    view->setSource(QUrl("qrc:/main.qml"));
+    view->show();
     engine.load(url);
 
     return app.exec();
