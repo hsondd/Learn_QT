@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+import io.qt.Backend 1.0
 
 Window {
     visible: true
@@ -26,7 +27,7 @@ Window {
             id_ti.append(addMsg(msg));
         }
         onSomeError: {
-            id_ti.append(addMsg("Error! " + err));
+            id_ti.append(addMsg("Error! " + error));
             if (currentStatus !== true)
             {
                 id_backend.disconnectClicked();

@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick.Controls 2.3
 
 Button {
     id: id_btn
@@ -13,7 +13,7 @@ Button {
     property alias border: back.border
 
     contentItem: Text {
-        text: control.text
+        text: id_btn.text
         font.pixelSize: 14
     }
 
